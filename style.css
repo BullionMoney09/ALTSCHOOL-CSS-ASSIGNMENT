@@ -1,0 +1,87 @@
+/* style.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 30px;
+}
+
+/* Top section: profile picture + about me side by side on larger screens */
+.top-section {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Profile picture placeholder circle */
+.profile-pic {
+  width: 150px;            /* size of the circle */
+  height: 150px;
+  border-radius: 50%;      /* makes it circular */
+  overflow: hidden;        /* hides overflow corners */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #333;  /* optional border */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills the circle without distortion */
+}
+
+
+/* About me styling */
+.about-me {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Bottom section: hobbies and aspiration boxes */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Generic box styles */
+.box {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .top-section {
+    grid-template-columns: 1fr; /* stack the picture above the about me */
+    text-align: center;
+  }
+  .profile-pic {
+    margin: 0 auto;
+  }
+  .bottom-section {
+    grid-template-columns: 1fr; /* stack hobbies and aspiration */
+  }
+}
